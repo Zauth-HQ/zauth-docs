@@ -1,0 +1,85 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "zkVerify",
+  "description": "Confidential browsing and zero-knowledge verification",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "index",
+              "quickstart",
+              "pricing"
+            ]
+          },
+          {
+            "group": "Concepts",
+            "pages": [
+              "concepts/problem",
+              "concepts/solution",
+              "concepts/architecture",
+              "concepts/tech-stack"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": ["reference/attestations-api"]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "More",
+            "pages": [
+              "development"
+            ]
+          },
+          {
+            "group": "Mintlify",
+            "pages": [
+              "essentials/navigation",
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images",
+              "essentials/reusable-snippets",
+              "essentials/settings"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": []
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Quickstart",
+      "href": "/quickstart"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+---
+title: "Attestations API"
+description: "How websites should consume zkVerify attestations"
+---
+
+Websites should treat zkVerify as a **verification oracle**:
+
+## Recommended pattern
+
+1. The extension produces an **attestation reference** (ID / hash / address).
+2. Your app/backend queries attestation status and validity.
+3. Gate access based on attestation checks (without requesting the underlying data).
+
+## What to store
+
+- Attestation identifier (and optionally a user binding)
+- Claim type (e.g. `human`, `over_18`)
+- Timestamp / expiry policy (if your product requires it)
+
+If you need a specific endpoint schema here, tell me what zkVerify exposes in your stack (REST, GraphQL, on-chain contract, indexer), and I’ll format this page to match it.
+
