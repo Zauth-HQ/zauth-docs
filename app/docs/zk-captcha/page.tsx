@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ExternalLinks } from '@/components/ExternalLinks';
+import { CodeBlock } from '@/components/CodeBlock';
 import { Prose } from '@/components/Prose';
 
 export const metadata: Metadata = {
@@ -17,15 +17,14 @@ export default function ZkCaptchaOverviewPage() {
         fingerprinting or third-party tracking. Proofs are verified through{' '}
         <strong>zkVerify</strong> (UltraHonk on Volta testnet in current integrations).
       </p>
-      <ExternalLinks />
       <h2>Monorepo layout (<code>zauth-captcha</code>)</h2>
-      <pre>
-        <code>{`zauth-captcha/
+      <CodeBlock
+        code={`zauth-captcha/
 ├── backend/     # Express API — challenges, verify, zkVerify, JWT, Redis
 ├── circuits/    # Noir circuit + Barretenberg UltraHonk artifacts
 ├── sdk/         # @zauth/captcha-sdk (core + React)
-└── docs/        # Deep-dive markdown (source for these pages)`}</code>
-      </pre>
+└── docs/        # Deep-dive markdown (source for these pages)`}
+      />
       <h2>End-to-end flow</h2>
       <ol>
         <li>Client requests a <strong>challenge</strong> (<code>POST /api/challenge</code>).</li>

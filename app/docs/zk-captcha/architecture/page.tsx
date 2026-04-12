@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { CodeBlock } from '@/components/CodeBlock';
 import { Prose } from '@/components/Prose';
 
 export const metadata: Metadata = {
@@ -15,8 +16,8 @@ export default function ArchitecturePage() {
         zkVerify for on-chain verification. This page summarizes how those pieces cooperate.
       </p>
       <h2>Request flow</h2>
-      <pre>
-        <code>{`User Browser          App Backend           zkVerify
+      <CodeBlock
+        code={`User Browser          App Backend           zkVerify
     │                      │                      │
     │ 1. Request challenge │                      │
     │─────────────────────>│                      │
@@ -31,8 +32,8 @@ export default function ArchitecturePage() {
     │                      │ 6. Receipt / result  │
     │                      │<─────────────────────│
     │ 7. JWT / session     │                      │
-    │<─────────────────────│                      │`}</code>
-      </pre>
+    │<─────────────────────│                      │`}
+      />
       <h2>Component roles</h2>
       <h3>Circuits (source of truth)</h3>
       <p>

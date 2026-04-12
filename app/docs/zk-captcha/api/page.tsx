@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CodeBlock } from '@/components/CodeBlock';
 import { Prose } from '@/components/Prose';
 
 export const metadata: Metadata = {
@@ -17,8 +18,9 @@ export default function ApiPage() {
         <code>POST /api/challenge</code>
       </h2>
       <p>Creates a new challenge and stores the nonce server-side.</p>
-      <pre>
-        <code className="language-json">{`// Request
+      <CodeBlock
+        language="json"
+        code={`// Request
 { "siteId": "optional-site-id" }
 
 // Response
@@ -27,14 +29,15 @@ export default function ApiPage() {
   "nonce": "hex",
   "difficulty": 10,
   "expiresAt": "2024-01-15T10:30:00.000Z"
-}`}</code>
-      </pre>
+}`}
+      />
       <h2>
         <code>POST /api/verify</code>
       </h2>
       <p>Submits proof data for the active challenge; backend verifies via zkVerify and returns a JWT.</p>
-      <pre>
-        <code className="language-json">{`// Request
+      <CodeBlock
+        language="json"
+        code={`// Request
 {
   "challengeId": "uuid",
   "proof": {
@@ -50,19 +53,20 @@ export default function ApiPage() {
   "verificationId": "ver_...",
   "token": "eyJ...",
   "expiresAt": "..."
-}`}</code>
-      </pre>
+}`}
+      />
       <h2>
         <code>POST /api/zkverify/ultrahonk</code>
       </h2>
       <p>Lower-level UltraHonk submission to zkVerify Volta. Used for tooling and debugging; app flows usually go through <code>/api/verify</code>.</p>
-      <pre>
-        <code className="language-json">{`{
+      <CodeBlock
+        language="json"
+        code={`{
   "proof": { "ZK": "0x..." },
   "vk": "0x...",
   "publicInputs": ["0x...", "0x..."]
-}`}</code>
-      </pre>
+}`}
+      />
       <h2>
         <code>GET /api/health</code>
       </h2>

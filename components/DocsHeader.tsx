@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useTheme } from '@/components/ThemeProvider';
-import { CAPTCHA_SDK_NPM, ZAUTH_WEBSITE } from '@/lib/links';
+import { CAPTCHA_SDK_NPM, ZAUTH_GITHUB, ZAUTH_WEBSITE } from '@/lib/links';
 
 type Props = {
   onMenuClick: () => void;
@@ -13,9 +13,9 @@ export function DocsHeader({ onMenuClick, menuOpen }: Props) {
   const { theme, toggle } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 h-[3.75rem] shrink-0 border-b border-zinc-200/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/90 dark:bg-zinc-950/90">
-      <div className="mx-auto flex h-full max-w-[1600px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex min-w-0 flex-1 items-center gap-3">
+    <header className="sticky top-0 z-50 h-[60px] shrink-0 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-black/80">
+      <div className="flex h-full items-center justify-between gap-3 px-4 lg:px-5">
+        <div className="flex min-w-0 items-center gap-2">
           <button
             type="button"
             className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1 rounded-lg text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 lg:hidden"
@@ -29,25 +29,33 @@ export function DocsHeader({ onMenuClick, menuOpen }: Props) {
           </button>
           <Link
             href="/docs"
-            className="flex min-w-0 items-center gap-3 rounded-lg py-1 pr-2 transition hover:opacity-90"
+            className="flex min-w-0 items-center gap-2 transition-opacity hover:opacity-80"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- public PNG logo */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo.png"
               alt="Zauth"
-              className="h-8 w-auto max-h-8 max-w-[min(160px,42vw)] shrink-0 object-contain object-left sm:max-w-[180px]"
+              className="h-6 w-auto object-contain object-left sm:h-7"
             />
-            <span className="hidden text-sm font-medium text-zinc-500 dark:text-zinc-400 sm:inline">
-              Documentation
+            <span className="hidden text-sm font-semibold tracking-tight text-zinc-900 dark:text-white sm:inline-block">
+              Zauth
             </span>
           </Link>
         </div>
-        <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+          <a
+            href={ZAUTH_GITHUB}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-md px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100/80 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white sm:block"
+          >
+            GitHub
+          </a>
           <a
             href={ZAUTH_WEBSITE}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 md:inline"
+            className="hidden rounded-md px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100/80 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white md:block"
           >
             Website
           </a>
@@ -55,13 +63,13 @@ export function DocsHeader({ onMenuClick, menuOpen }: Props) {
             href={CAPTCHA_SDK_NPM}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg px-2.5 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 sm:px-3"
+            className="rounded-md px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100/80 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white"
           >
             npm
           </a>
           <button
             type="button"
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            className="flex h-9 w-9 items-center justify-center rounded-md text-zinc-600 transition-colors hover:bg-zinc-100/80 dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white"
             onClick={toggle}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           >

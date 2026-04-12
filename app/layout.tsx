@@ -33,7 +33,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="antialiased bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <body className="antialiased bg-white text-zinc-900 dark:bg-black dark:text-zinc-100">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

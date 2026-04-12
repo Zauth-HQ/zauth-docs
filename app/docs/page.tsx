@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { ExternalLinks } from '@/components/ExternalLinks';
 import { Prose } from '@/components/Prose';
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function IntroductionPage() {
         behavioral tracking. Proofs are generated locally; verification settles through zkVerify for fast,
         scalable attestation.
       </p>
-      <ExternalLinks />
       <h2>What we are building (modular roadmap)</h2>
       <p>
         The public site at{' '}

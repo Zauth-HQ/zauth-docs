@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CodeBlock } from '@/components/CodeBlock';
 import { Prose } from '@/components/Prose';
 
 export const metadata: Metadata = {
@@ -63,13 +64,14 @@ export default function BackendPage() {
         proof data for <code>ProofType.ultrahonk</code> with <code>UltrahonkVariant.ZK</code>, and executes{' '}
         <code>verify().ultrahonk(...)</code>.
       </p>
-      <pre>
-        <code className="language-json">{`{
+      <CodeBlock
+        language="json"
+        code={`{
   "proof": { "ZK": "0x..." },
   "vk": "0x...",
   "publicInputs": ["0x0a...", "0x00..."]
-}`}</code>
-      </pre>
+}`}
+      />
       <h2>Environment variables (representative)</h2>
       <ul>
         <li>

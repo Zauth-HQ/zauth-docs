@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ExternalLinks } from '@/components/ExternalLinks';
+import { CodeBlock } from '@/components/CodeBlock';
 import { Prose } from '@/components/Prose';
 import { CAPTCHA_SDK_NPM } from '@/lib/links';
 
@@ -15,17 +15,14 @@ export default function SdkPage() {
       </h1>
       <p>
         TypeScript SDK for ZK CAPTCHA: fetch challenges from your backend, generate UltraHonk-compatible
-        proofs in the browser (Noir WASM + bundled artifacts), and submit verification requests. Published on{' '}
+        proofs in the browser (Noir WASM + bundled artifacts), and submit verification requests. Install from{' '}
         <a href={CAPTCHA_SDK_NPM} target="_blank" rel="noreferrer">
-          npm
+          <code>@zauth/captcha-sdk</code> on npm
         </a>
         .
       </p>
-      <ExternalLinks />
       <h2>Install</h2>
-      <pre>
-        <code>npm install @zauth/captcha-sdk</code>
-      </pre>
+      <CodeBlock code="npm install @zauth/captcha-sdk" />
       <p>
         Package exports: default <code>@zauth/captcha-sdk</code> (core) and{' '}
         <code>@zauth/captcha-sdk/react</code> for the React hook. Requires Node 18+; React 18+ as a peer for the
@@ -35,8 +32,9 @@ export default function SdkPage() {
         Core: <code>ZkCaptcha</code>
       </h2>
       <p>Construct with your API base URL and optional site id, artifact URL, and timeout.</p>
-      <pre>
-        <code className="language-ts">{`import ZkCaptcha from '@zauth/captcha-sdk';
+      <CodeBlock
+        language="ts"
+        code={`import ZkCaptcha from '@zauth/captcha-sdk';
 
 const captcha = new ZkCaptcha({
   backendUrl: 'https://your-api.example.com',
@@ -53,8 +51,8 @@ const proof = await captcha.generateProof(challenge, {
 const result = await captcha.verify(challenge.challengeId, proof);
 // result.token — JWT from backend; result._meta may include txHash, verificationMethod, etc.
 
-await captcha.destroy();`}</code>
-      </pre>
+await captcha.destroy();`}
+      />
       <h3>Methods (summary)</h3>
       <ul>
         <li>
@@ -78,8 +76,9 @@ await captcha.destroy();`}</code>
         </li>
       </ul>
       <h2>React: <code>useZkCaptcha</code></h2>
-      <pre>
-        <code className="language-ts">{`import { useZkCaptcha } from '@zauth/captcha-sdk/react';
+      <CodeBlock
+        language="tsx"
+        code={`import { useZkCaptcha } from '@zauth/captcha-sdk/react';
 
 function CaptchaButton() {
   const { generateProof, fetchChallenge, status, token, error, challenge, progress, reset } =
@@ -97,15 +96,15 @@ function CaptchaButton() {
         Get challenge
       </button>
       <button type="button" onClick={() => void generateProof()} disabled={status === 'processing'}>
-        Prove &amp; verify
+        Prove & verify
       </button>
       {progress > 0 && <p>Progress: {progress}%</p>}
       {token && <p>Token issued</p>}
       {error && <p>{error.message}</p>}
     </div>
   );
-}`}</code>
-      </pre>
+}`}
+      />
       <p>
         The hook creates a <code>ZkCaptcha</code> instance, calls <code>initialize()</code> on mount, and
         destroys it on unmount. <code>generateProof</code> fetches a challenge if needed, runs proving, then

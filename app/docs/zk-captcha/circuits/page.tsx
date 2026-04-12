@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CodeBlock } from '@/components/CodeBlock';
 import { Prose } from '@/components/Prose';
 
 export const metadata: Metadata = {
@@ -69,14 +70,14 @@ export default function CircuitsPage() {
         <code>timestamp</code> (u64) for auditability; hash checks stay private in-circuit.
       </p>
       <h2>Repository layout</h2>
-      <pre>
-        <code>{`circuits/
+      <CodeBlock
+        code={`circuits/
 ├── src/main.nr, hash.nr
 ├── Nargo.toml
 ├── Prover.toml
 ├── scripts/prove-ultrahonk.sh, convert-zkv-hex.sh
-└── target/   # compiled JSON, proof, vk`}</code>
-      </pre>
+└── target/   # compiled JSON, proof, vk`}
+      />
       <h2>Toolchain (typical)</h2>
       <ul>
         <li>
@@ -87,14 +88,14 @@ export default function CircuitsPage() {
         </li>
       </ul>
       <h2>Prove pipeline (abbreviated)</h2>
-      <pre>
-        <code>{`cd circuits
+      <CodeBlock
+        code={`cd circuits
 nargo compile
 nargo execute
 bb write_vk -s ultra_honk -b ./target/zauth_captcha.json -o ./target --oracle_hash keccak
 bb prove -s ultra_honk -b ./target/zauth_captcha.json -w ./target/zauth_captcha.gz \\
-  -o ./target --zk --oracle_hash keccak`}</code>
-      </pre>
+  -o ./target --zk --oracle_hash keccak`}
+      />
       <p>
         Use <code>scripts/convert-zkv-hex.sh</code> (or the Makefile target <code>prove-ultrahonk</code>) to
         align hex formats expected by zkVerify and the backend normalizers.
