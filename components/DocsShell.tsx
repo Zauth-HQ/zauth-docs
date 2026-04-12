@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { DocsSidebar } from './DocsSidebar';
+import { MobileDocNav } from './MobileDocNav';
 
 export function DocsShell({ children }: { children: ReactNode }) {
   return (
@@ -9,7 +10,10 @@ export function DocsShell({ children }: { children: ReactNode }) {
           <DocsSidebar />
         </div>
       </div>
-      <main className="min-w-0 flex-1 px-4 py-10 sm:px-8 lg:py-12">{children}</main>
+      <main className="min-w-0 flex-1 px-4 py-10 sm:px-8 lg:py-12">
+        <MobileDocNav />
+        {children}
+      </main>
     </div>
   );
 }
