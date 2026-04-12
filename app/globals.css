@@ -1,10 +1,31 @@
 @import 'tailwindcss';
+
+@source './**/*.{js,ts,jsx,tsx}';
+@source '../components/**/*.{js,ts,jsx,tsx}';
+
 @plugin '@tailwindcss/typography';
 
-@theme {
-  --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+/* Match zauth-browser light “Stripe” theme: white / off-white surfaces */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 214 40% 14%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 15% 45%;
+  --border: 213 27% 85%;
+  --primary: 259 80% 55%;
+  --primary-hover: 259 80% 48%;
+  --card: 0 0% 100%;
+}
+
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
-  @apply bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }

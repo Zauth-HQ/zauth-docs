@@ -1,44 +1,28 @@
-# Mintlify Starter Kit
+# Zauth documentation (Next.js)
 
-Use the starter kit to get your docs deployed and ready to customize.
+Developer documentation for Zauth: product introduction, ZK CAPTCHA architecture, Noir / UltraHonk circuits, the Node backend and zkVerify integration, and the [`@zauth/captcha-sdk`](https://www.npmjs.com/package/@zauth/captcha-sdk) npm package.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+- **Product site:** [zauth-alpha.vercel.app](https://zauth-alpha.vercel.app/)
+- **Stack:** Next.js App Router, TypeScript, Tailwind CSS v4
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## Local development
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
+```bash
+pnpm install
+pnpm dev
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+Open [http://localhost:3001](http://localhost:3001) (port 3001 avoids clashes with other local apps).
 
+## Production build
+
+```bash
+pnpm build
+pnpm start
 ```
-mint dev
-```
 
-View your local preview at `http://localhost:3000`.
+Deploy on Vercel, Netlify, or any Node host by setting the project root to this directory.
 
-## Publishing changes
+## Content
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
-- [Mintlify community](https://mintlify.com/community)
+Pages live under `app/` as React/TSX (no MDX). Shared navigation is in `lib/nav.ts`; external links are centralized in `lib/links.ts`.
