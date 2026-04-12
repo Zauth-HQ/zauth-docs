@@ -23,11 +23,11 @@ export function CopyRow({
 
   return (
     <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-      <span className="w-28 shrink-0 text-xs font-medium text-[hsl(215_15%_45%)]">{title}</span>
+      <span className="w-28 shrink-0 text-xs font-medium text-zinc-500 dark:text-zinc-400">{title}</span>
       <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-center">
         <code
           className={
-            'block min-w-0 flex-1 break-all rounded-md border border-[hsl(213_27%_90%)] bg-[hsl(210_20%_98%)] px-3 py-2 text-[13px] leading-snug text-[hsl(214_40%_14%)] ' +
+            'block min-w-0 flex-1 break-all rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2 text-[13px] leading-snug text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200 ' +
             (monospace ? 'font-mono' : '')
           }
         >

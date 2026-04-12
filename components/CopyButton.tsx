@@ -32,7 +32,7 @@ export function CopyButton({
       type="button"
       onClick={() => void onCopy()}
       className={
-        'inline-flex shrink-0 items-center gap-1.5 rounded-md border border-[hsl(213_27%_85%)] bg-white px-2.5 py-1 text-xs font-medium text-[hsl(214_40%_14%)] shadow-sm transition hover:bg-[hsl(210_20%_96%)] ' +
+        'inline-flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-800 shadow-sm transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 ' +
         className
       }
     >

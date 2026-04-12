@@ -5,16 +5,15 @@
 
 @plugin '@tailwindcss/typography';
 
-/* Match zauth-browser light “Stripe” theme: white / off-white surfaces */
+/* Match ThemeProvider: .dark + data-theme on <html> */
+@custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
+
 :root {
-  --background: 0 0% 100%;
-  --foreground: 214 40% 14%;
-  --muted: 210 20% 96%;
-  --muted-foreground: 215 15% 45%;
   --border: 213 27% 85%;
-  --primary: 259 80% 55%;
-  --primary-hover: 259 80% 48%;
-  --card: 0 0% 100%;
+}
+
+.dark {
+  --border: 240 4% 26%;
 }
 
 * {
@@ -22,9 +21,6 @@
 }
 
 body {
-  min-height: 100vh;
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
   font-family:
     -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;

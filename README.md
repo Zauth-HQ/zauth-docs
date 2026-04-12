@@ -3,7 +3,7 @@
 Developer documentation for Zauth: product introduction, ZK CAPTCHA architecture, Noir / UltraHonk circuits, the Node backend and zkVerify integration, and the [`@zauth/captcha-sdk`](https://www.npmjs.com/package/@zauth/captcha-sdk) npm package.
 
 - **Product site:** [zauth-alpha.vercel.app](https://zauth-alpha.vercel.app/)
-- **Stack:** Next.js App Router, TypeScript, Tailwind CSS v4
+- **Stack:** Next.js App Router, TypeScript, Tailwind CSS v3
 
 ## Local development
 
