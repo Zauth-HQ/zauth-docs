@@ -19,6 +19,16 @@ export const docNavGroups: NavGroup[] = [
       { href: '/docs/zk-captcha/api', title: 'REST API' },
     ],
   },
+  {
+    label: 'Browser Extension',
+    items: [
+      { href: '/docs/browser-extension', title: 'Overview' },
+      { href: '/docs/browser-extension/architecture', title: 'Architecture' },
+      { href: '/docs/browser-extension/shields', title: 'Privacy Shields' },
+      { href: '/docs/browser-extension/cryptography', title: 'Cryptography' },
+      { href: '/docs/browser-extension/zkverify', title: 'zkVerify Integration' },
+    ],
+  },
 ];
 
 export const mainNav: NavItem[] = docNavGroups.flatMap((g) => g.items);
